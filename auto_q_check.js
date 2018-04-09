@@ -18,8 +18,9 @@ function dl_ksat(level) {
                 var lets_random_child = r_int(range);
                 var cell = row[lets_random_child];
                 var input = cell.children[0];
+                if (input === undefined) { continue; }
                 input.checked = true;
-            } while (cell.children.length === 0 || input === undefined);
+            } while (cell.children.length === 0);
         }
     }
 
