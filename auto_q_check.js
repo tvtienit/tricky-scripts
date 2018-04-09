@@ -12,14 +12,14 @@ function dl_ksat(level) {
     
     function start() {
         for(var i = 0; i < srv_group.length; i++) {
-            if (srv_group[i].innerHTML.indexOf('radio') == -1) { continue; }
+            if (srv_group[i].innerHTML.indexOf('radio') === -1) { continue; }
             var row = srv_group[i].children;
             do {
                 var lets_random_child = r_int(range);
                 var cell = row[lets_random_child];
                 var input = cell.children[0];
                 input.checked = true;
-            } while (cell.children.length === 0);
+            } while (cell.children.length === 0 || input === undefined);
         }
     }
 
